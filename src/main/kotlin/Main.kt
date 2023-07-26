@@ -36,6 +36,8 @@ fun main() {
 
     printNumbersWhile(10)
     printNumbersDoWhile(10)
+
+    imbricatedWhiles()
 }
 
 fun sayHello(name: String, age: Int) {
@@ -90,6 +92,23 @@ fun printNumbersDoWhile(howMany: Int) {
         }
         println(number++)
     } while (number < howMany)
+}
+
+fun imbricatedWhiles() {
+    var number = 0
+    println(number)
+
+    outer@ while (number < 5) {
+        number++
+        println(number)
+        var i = 0
+
+        while (i < 5) {
+            if (i == 0) break@outer
+            i++
+            println("***$i")
+        }
+    }
 }
 
 /// instead of switch we have when. It supports ranges of values
